@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- <script src="quizPage.js"></script> -->
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <form action="" name="ContactForm">
+        <section style="float: left;">
+            <label for="name_Contact">Enter your Name : &ensp; &ensp;&nbsp;&nbsp;</label>
+            <input type="text" id="name_Contact" name="name_name_Contact">
+            <p id="name_error_Contact" ></p>
+        </section>
+
+        <br><br><br><br>
+        <section>
+            <label for="email_Contact">Enter your E-mail id &ensp; &ensp;&nbsp;&nbsp;&nbsp;:&ensp; &ensp;&nbsp;&nbsp; </label>
+            <input type="text" id="email_Contact" name="email_email_Contact">
+            <p id="email_error_Contact"></p>
+        </section>
+
+        <br><br><br>
+
+        <label for="Request">Request : </label>
+        <input type="textArea" id="Request">
+        <br><br><br>
+
+        <button type="button" onclick="submitForm();">Submit</button>
+
+
+
+    </form>
+
+
+    
+    <script>
+        function submitForm(){
+
+name_ContactForm = document.ContactForm.name_name_Contact.value;
+email_ContactForm = document.ContactForm.email_email_Contact.value;
+
+
+
+if(name_ContactForm == "" && email_ContactForm =="") {
+    alert("Please Enter your Email and Name");
+}
+    var regex1 = /^[a-zA-Z\s]+$/;                
+    if(regex1.test(name_ContactForm) === false) {
+        document.getElementById("name_error_Contact").style.color = "red";
+        document.getElementById("name_error_Contact").innerHTML = "Please Enter a valid name";
+    }
+    else{
+        document.getElementById("name_error_Contact").innerHTML = "";
+    }
+
+
+    var regex = /^\S+@\S+\.\S+$/;
+    if(regex.test(email_ContactForm) === false) {
+        temp = "Please Enter a valid email";
+        document.getElementById("email_error_Contact").style.color = "red";
+        document.getElementById("email_error_Contact").innerHTML = temp;
+    }
+    else{
+        document.getElementById("email_error_Contact").innerHTML = "";
+    }
+
+    if(regex.test(email_ContactForm) && regex1.test(name_ContactForm)){
+        alert("Your request is forwarded !");
+    }
+}
+
+
+
+function Prev_Quizes(){
+alert("You have not attempted any quizes yet");
+}
+
+function achievements(){
+alert("You have not unlocked any Achievements yet");
+}
+
+function Upcoming_Quizzes(){
+
+document.getElementById("upcoming_Quiz").style.display = 'block';
+document.getElementById("main_block").style.display = 'none';
+
+}
+
+
+function Available_Quizzes(){
+
+document.getElementById("main_block").style.display = 'block';
+document.getElementById("upcoming_Quiz").style.display = 'none';
+
+}
+
+function invitepupil() {
+
+document.getElementById("hide").style.display = 'block';
+}
+
+
+
+function themeChange(){
+if(document.getElementById("body_background").style.backgroundColor === "white"){
+document.getElementById("body_background").style.backgroundColor = "black";}
+else{
+document.getElementById("body_background").style.backgroundColor = "white";
+}
+}
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

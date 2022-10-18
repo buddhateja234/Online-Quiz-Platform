@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>LOGIN PAGE</title>
+        <style>
+        img{
+            border-radius:50%;
+        }
+        body{
+            background-image: url(https://t4.ftcdn.net/jpg/01/19/11/55/360_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg);
+            background-size: cover;
+        }
+        form{
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            width: 500px;
+            border-radius: 25px;
+        }
+        input{
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+        #sb{
+            background-color: green;
+            color: white;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            
+        }
+        button:hover{
+            opacity: 0.6;
+        }
+        #cn{
+            background-color: red;
+            color: white;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <form >
+            <div class="imgcontainer" style="text-align: center;">
+                <img src="https://www.w3schools.com/howto/img_avatar2.png" width="20%"  >
+            </div>
+            <br><br>
+            <div class="container">
+                <label for="uname" style="font-weight: bold; padding-left: 8px;">USERNAME</label><br>
+                <input type="text" name="uname" style="width: 100%;" placeholder="Enter Username"><br><br>
+                <label for="pwd" style="font-weight: bold; padding-left: 8px;">PASSWORD</label><br>
+                <input type="text" name="pwd" style="width: 100%;" placeholder="Enter Password">
+                <button type="button" id="sb" onclick="location.href = 'quiz_section.html';">SIGN IN</button>
+                <label> New User? <a href="register page.html">click here</a></label>
+                <label style="float: right;">forgot <a href="">password?</a></label><br><br>
+                <button id="cn">CANCEL</button>
+            </div>
+            <br><br>
+        </form>
+        
+    </body>
+</html>

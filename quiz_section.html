@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="quiz_sec.css"> -->
+    <link rel="shortcut icon" href="https://w1.pngwing.com/pngs/200/626/png-transparent-brain-human-brain-idea-drawing-cerebrum-yellow-line-circle.png" class="logo_title">
+    <!-- <script src="quizPage.js"></script> -->
+    <title>Quiz Section</title>
+</head>
+
+<body id="body_background">
+    <style>
+        
+*{
+
+font-family: 'Trebuchet MS', sans-serif;
+}
+
+.Left{
+width: 20%;
+height: 100vh;
+background-color: darkcyan;
+margin: 0%;
+border-radius: 5px;
+float: left;
+align-items: center;
+text-align: center;
+}
+
+#profile{
+border-radius: 50%;
+margin-top: 5vh;
+margin-bottom: 10vh;
+font-size: 20px;
+
+}
+
+.Right{
+height: 7%;
+width: 78%;
+background-color: aquamarine;
+padding: 10px;
+float: right;
+/* border: 1px solid blue; */
+margin: 0%;
+border-radius: 5px;
+}
+
+.logo_title {
+border-radius: 50%;
+}
+
+
+#quiz_heading {
+font-size: 30px;
+padding: -15px 20px;
+justify-items: center;
+}
+
+
+a {
+text-decoration: none;
+
+}
+
+button {
+/*background-color: blue;*/
+cursor: pointer;
+}
+
+
+  
+.invitation:hover + .hide {
+display: block;
+color: red;
+}
+
+
+.references_sec{
+
+font-size: large;
+margin-top: 50px;
+height: 70vh;
+background-color: pink;
+width: 20%;
+float: right;
+font-size: medium;
+text-align: center;
+border-radius: 7px;
+
+}
+
+#upcoming_Quiz{
+display: none;
+}
+#Other_Quizzes{
+    display: none;
+}
+
+#center_block{
+width:50%;
+height: 72vh;
+margin: 10vh;
+margin-top: 12vh;
+background-color: white;
+float: left;
+justify-content: space-between;
+align-items: center;
+border-radius: 5px;
+padding: 20px;
+box-sizing: border-box;
+}
+
+#Math_quizes{
+    display: none;width:50%;
+height: 72vh;
+margin: 10vh;
+margin-top: 12vh;
+font-size: xx-large;
+background-color: white;
+float: left;
+text-align: center;
+padding-top: 30vh;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+.subject_buttons{
+background-color: white;
+border: solid lightsalmon 1px;
+height: 100px;
+width: 225px;
+border-radius: 10%;
+margin: 10px;
+font-size: 20px;
+font-weight:lighter;
+transition: 400ms;
+
+}
+
+
+.subject_buttons:hover{
+width: 250px;
+height: 125px;
+box-shadow: 3px 3px black;
+}
+
+#main_block{
+margin-top: 40px;
+}
+
+
+
+
+    </style>
+
+    <div class="Left">
+        <figure id = "profile">
+        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" style="width: 100px; height: 100px; border-radius: 50%;"><br><br>
+            <figcaption>
+                Buddha Teja
+            </figcaption>
+        </figure>
+
+        <button type="button" style="width: 100%; height: 50px; font-size: medium;" onclick="location.href = 'profilepage.html';">Profile</button>
+        <button type="button" style="width: 100%; height: 50px; font-size: medium;" onclick="Prev_Quizes();">Previous Quizzes</button>
+        
+        <button type="button" style="width: 100%; height: 50px; font-size: medium; margin-bottom: 11vh;" onclick="achievements();">Achievements</button>
+
+        
+        <p style="display: none; margin-top: 0%; margin-bottom: 10px;" id="hide">onlinequizplatform.com</p>
+
+        <div class="invitation"><button type="button" style="font-size: medium; border-radius: 5px; background-color: greenyellow; width: 60%; height : 30px;" onclick="invitepupil();">Invite</button></div>
+
+        
+
+    </div>
+
+
+    <div class = "Right">
+        <p style="float: left;margin: 0%;" id="quiz_heading">&ensp;&ensp;Quizathon</p>
+        <a href="About_Us.html" style="float: right; font-size: 20px;">&ensp; About Us &ensp;</a>
+        <!-- <p style="float: right;">&ensp; &ensp;</p> -->
+        <a href="Contact_Us.html" style="float: right;  font-size: 20px;">&ensp;&ensp;Contact Us&ensp;</a>
+        <button type="button" onclick="themeChange();" style="float: right;background-color: lightyellow; font-size: 15px;">Mode</button>
+
+    </div>
+
+    <div id="center_block">
+        <a href="#" onclick="Available_Quizzes();"><h2 style="margin: 0%; float: left;">Available Quizzes</h2></a>
+        <h2 style="float:left; margin: 0%;">&ensp;&ensp;&ensp;&ensp;|</h2>
+        <a href="#" onclick="Upcoming_Quizzes();"><h2 style="float: right; margin: 0%;">Upcoming Quizzes&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</h2></a>
+        <br><br>
+
+        <div id="main_block">
+            <button type="button" class = "subject_buttons" onclick = "Math_quizes();" style="background-image: url(https://www.21clhk.org/wp-content/uploads/2020/12/Creativity-in-Mathematics.png); background-size:cover;">
+                <b>
+                    <p style="color: white;"></p>
+                
+                    <p style="font-size: 10px; color: white;">&ensp;</p></b>
+            </button>
+    
+            <button type="button" onclick="Other_quiz()" class = "subject_buttons" style="background-image: url(https://image.shutterstock.com/image-vector/physics-school-subject-typographic-header-260nw-1810319860.jpg); background-size:cover;">
+                <b>
+                    <p style="color: white;"></p>
+                
+                    <p style="font-size: 10px; color: white;">&ensp;</p></b>
+                </b>
+            </button>
+    
+            <button type="button" onclick="Other_quiz()" class = "subject_buttons" style="background-image: url(https://image.shutterstock.com/image-vector/chemistry-icons-set-chalkboard-elements-260nw-1028433904.jpg);background-size: cover;">
+
+                
+                <p style="font-size: 10px;">&ensp;</p>
+            </button>
+    
+            <button type="button" onclick="Other_quiz()" class = "subject_buttons" style="font-size: 15px; background-image: url(http://vskills.in/certification/blog/wp-content/uploads/2015/01/aptitude-test.jpg); background-size: cover;">
+                <p style="font-size: 10px;">&ensp;</p>
+            </button>
+        </div>
+
+        <div id = "upcoming_Quiz">
+            <p style="margin-top: 8vh; margin-left: 5vh; font-size: large;">You don't have any Quizzes in the coming three days!! Happy Learning.</p>
+        </div>
+
+        <div id = "Other_Quizzes">
+            <p style="margin-top: 8vh; margin-left: 5vh; font-size: large;">You don't have any Quizzes of this subject!! Happy Learning.</p>
+        </div>
+
+        
+        
+        
+
+    </div>
+    
+
+    <div class = "references_sec">
+        <h2>References</h2>
+        <p>
+
+        </p>
+        <a href="https://www.khanacademy.org/math/calculus-1" style="font-size: 25px;">Mathematics-I</a><br><br>
+        <a href="https://www.khanacademy.org/math/algebra" style="font-size: 25px; ">Mathematics-II</a><br><br>
+        <a href="https://www.khanacademy.org/science/physics" style="font-size: 25px;">Physics</a><br><br>
+        <a href="https://www.khanacademy.org/science/chemistry" style="font-size: 25px; ">Chemistry</a><br><br>
+        <a href="https://www.khanacademy.org/test-prep/lsat/lsat-lessons/logical-reasoning/a/logical-reasoning--article--getting-started" style="font-size: 25px;">Reasoning </a>
+        <br><br><br>
+        <div style="background-color: royalblue; height: 100px; width: 100%; text-align: left; padding: 3vh; box-sizing: border-box;">
+            <p style="font-size: 20px; margin-left:1vw ;">Ratings : 4.6 star</p>
+        </div>
+
+        
+        
+    </div>
+
+    <div id = "Math_quizes" >
+        <a href="maths_1.html">Math quiz1</a>
+    </div>
+
+    
+    <script>
+        function submitForm(){
+    
+    name_ContactForm = document.ContactForm.name_name_Contact.value;
+    email_ContactForm = document.ContactForm.email_email_Contact.value;
+    
+    
+    
+    if(name_ContactForm == "" && email_ContactForm =="") {
+        alert("Please Enter your Email and Name");
+    }
+        var regex1 = /^[a-zA-Z\s]+$/;                
+        if(regex1.test(name_ContactForm) === false) {
+            document.getElementById("name_error_Contact").style.color = "red";
+            document.getElementById("name_error_Contact").innerHTML = "Please Enter a valid name";
+        }
+        else{
+            document.getElementById("name_error_Contact").innerHTML = "";
+        }
+    
+    
+        var regex = /^\S+@\S+\.\S+$/;
+        if(regex.test(email_ContactForm) === false) {
+            temp = "Please Enter a valid email";
+            document.getElementById("email_error_Contact").style.color = "red";
+            document.getElementById("email_error_Contact").innerHTML = temp;
+        }
+        else{
+            document.getElementById("email_error_Contact").innerHTML = "";
+        }
+    
+        if(regex.test(email_ContactForm) && regex1.test(name_ContactForm)){
+            alert("Your request is forwarded !");
+        }
+    }
+    
+    
+    
+    function Prev_Quizes(){
+    alert("You have not attempted any quizes yet");
+    }
+    
+    function achievements(){
+    alert("You have not unlocked any Achievements yet");
+    }
+    
+    function Upcoming_Quizzes(){
+    
+    document.getElementById("upcoming_Quiz").style.display = 'block';
+    document.getElementById("main_block").style.display = 'none';
+    document.getElementById("Other_Quizzes").style.display = 'none';
+    
+    }
+    function Other_quiz(){
+    document.getElementById("upcoming_Quiz").style.display = 'none';
+    document.getElementById("main_block").style.display = 'none';
+    document.getElementById("Other_Quizzes").style.display = 'block';
+
+    }
+    
+    function Math_quizes(){
+        
+        document.getElementById("center_block").style.display = 'none';
+        document.getElementById("Math_quizes").style.display = 'block';
+        document.getElementById("main_block").style.display = 'none';
+    }
+    
+    
+    function Available_Quizzes(){
+    
+    document.getElementById("main_block").style.display = 'block';
+    document.getElementById("upcoming_Quiz").style.display = 'none';
+    document.getElementById("Other_Quizzes").style.display = 'none';
+    
+    
+    }
+    
+    function invitepupil() {
+    
+    document.getElementById("hide").style.display = 'block';
+    }
+    
+    
+    
+    function themeChange(){
+    if(document.getElementById("body_background").style.backgroundColor === "white"){
+    document.getElementById("body_background").style.backgroundColor = "black";}
+    else{
+    document.getElementById("body_background").style.backgroundColor = "white";
+    }
+    }
+    </script>
+    
+</body>
+</html>

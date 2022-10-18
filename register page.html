@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>REGISTER PAGE</title>
+        <style>
+            body{
+                background-image: url(https://t4.ftcdn.net/jpg/01/19/11/55/360_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg);
+            background-size: cover;
+            }
+            form{
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: white;
+            width: 500px;
+            border-radius: 25px;
+            }
+            input{
+                padding: 12px 20px;
+                margin: 8px 0;
+                border-radius: 10px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+            }
+            #sb{
+            background-color: green;
+            color: white;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form >
+            <div class="container">
+                <br>
+                <label for="uname" style="font-weight: bold; padding-left: 8px;">USERNAME</label><br>
+                <input type="text" name="uname" style="width: 100%;" placeholder="Enter Username"><br><br>
+                <label for="email" style="font-weight: bold; padding-left: 8px;">E-MAIL</label><br>
+                <input type="text" name="email" style="width: 100%;" placeholder="Enter email"><br><br>
+                <label for="phno" style="font-weight: bold; padding-left: 8px;">PHONE NUMBER</label><br>
+                <input type="text" name="phno" style="width: 100%;" placeholder="Enter Phone Number"><br><br>
+                <label for="pwd" style="font-weight: bold; padding-left: 8px;">PASSWORD</label><br>
+                <input type="text" name="pwd" style="width: 100%;" placeholder="Enter Password"><br><br>
+                <label for="cpwd" style="font-weight: bold; padding-left: 8px;">CONFIRM PASSWORD</label><br>
+                <input type="text" name="cpwd" style="width: 100%;" placeholder="Re-enter Password"><br><br>
+                <label style="font-weight: bold; padding-left: 8px;">SELECT A QUESTION FROM BELOW</label><br><br>
+                <select  id="s1">
+                    <option value="Which school did you study?">Which school did you study?</option>
+                    <option value="Whats your pet name?">Whats your pet name?</option>
+                    <option value="Which college did you graduate from?">Which college did you graduate from?</option>
+                    <option value="Whats your favourite sport?">Whats your favourite sport?</option>
+                    <option value="whats your nickname?">whats your nickname?</option>
+                    <option value="Whats your favourite flavour of icecream?">whats your favourite flavour of icecream?</option>
+                    <option value="Which is your favourite book?">Which is your favourite book?</option>
+                </select>
+                <input type="text" name="fq" style="width: 100%;" placeholder="Write the answer for the question chosen above">
+                <button type="button" onclick="location.href = 'quiz_section.html';" id="sb">REGISTER</button>
+            </div>
+        </form>
+        <script>
+            function pwdcheck(){
+                var pwd=document.getElementsByName("pwd");
+                re=/([A-Z][0-9][@,#,$,&])/
+                if(!re.test()){
+
+                }
+
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Maths Quiz</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body class="container">
+    <style>
+      * {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+ .num{
+   border: solid;
+   padding: 7px;
+   border-color: aliceblue;
+   border-radius: 4px;
+   border-width: 2px;
+   background-color: brown;
+  }
+
+  #num1{
+    border: solid;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 2.5px;
+    padding-left: 2.3px;
+    border-color: aliceblue;
+   border-radius: 4px;
+   border-width: 2px;
+   background-color: brown;
+  }
+  
+  .selected{
+   border: solid;
+   padding: 7px;
+   border-color: aliceblue;
+   border-radius: 4px;
+   border-width: 3.4px;
+   background-color: brown;
+  }
+
+   .left {
+    box-sizing: border-box;
+    width: 25%;
+    height: 100vh;
+    background-color: rgb(50, 50, 90);
+    float: left;
+    color: white;
+    padding: 15px;
+  }
+  
+  .profile {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-image:url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);
+    background-size: cover;
+  }
+  
+  .name {
+    font-size: 21px;
+    text-align: center;
+  }
+
+  #countdown, #inst{
+     text-align: left;
+     font-size: larger;
+     margin-top: 50px;
+    }
+    
+  .connect-button {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    margin-left: 15px;
+    margin-top: 0 px;
+    position: fixed;
+  }
+  
+  .right {
+    width: 75%;
+    height: 100vh;
+    background-color: rgb(24, 24, 26);
+    float: left;
+    color: white;
+    overflow: auto;
+    box-sizing: border-box;
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+  }
+  
+  .nav-container h3 {
+    margin: 0;
+  }
+  
+  .nav a {
+    color: gray;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .nav a:hover {
+    color: black;
+    transition: ease-in-out 500ms;
+  }
+  
+  .content {
+    margin: 30px 15px;
+    font-size: larger;
+  }
+   
+  .questions_sec{
+    margin: 7rem auto;
+    width: 70vw;
+    padding: 4rem;
+    background: rgba(0,255,221,0.45);
+    cursor: default;
+    border-radius: 1rem;
+}
+#question{
+    margin-bottom: 1rem;
+}
+.option{
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    border-bottom: solid 0.1rem blue;
+    width: 15rem;
+    background: lightblue;
+    border-radius: 1rem;
+}
+.option:hover{
+    color: white;
+}
+.opt{
+    position: relative;
+    padding: 0 1.5rem;
+    color: rgb(1,73,73);
+}
+#opt{
+  display: block;
+  padding: 0.1rem 0.7rem;
+  border-radius: 1rem;
+}
+
+
+
+  @media only screen and (max-width: 500px) {
+    .left {
+      float: none;
+      width: 100%;
+      padding: 20px;
+    }
+    .right {
+      float: none;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+    </style>
+    <div class="left">
+      <img class="profile" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="" style="width: 100px; height: 100px; border-radius: 50%;"/>
+      <h1 class="name">Buddha Teja</h1>
+      
+      <p id="countdown" class="blink">Time left:</p>
+      <span class="num">1</span>
+      <span class="num">2</span>
+      <span class="num">3</span>
+      <span class="num">4</span>
+      <span class="num">5</span>
+
+      <p id="inst">Instructions: 
+  <ol><br><li>Each single correct question carries 1 mark for correct answer
+      and -0.25 marks in all other cases.</li><br>
+  <li>Navigation is not allowed.</li>  
+</ol></p>
+      
+    </div>
+    <div class="right">
+      <div class="nav-container">
+        <h3>Maths Quiz</h3>
+        <div class="nav">
+          <a href="quiz_section.html">Quit</a>
+        </div>
+      </div>
+      <div class="questions_sec">
+        <h2 class = "question">Who is the Father of Mathematics ?</h2>
+        <ul style="list-style:none;">
+          <li>
+            <input type="radio" name="answer" id="opt1" class="answer">
+            <label for="opt1" id="option1">Srinivasa Iyengar Ramanujan</label>
+
+          </li>
+
+          <li>
+            
+          <input type="radio" name="answer" id="opt2" class="answer">
+          <label for="opt2" id="option2">C V Raman</label>
+
+          </li>
+          <li>
+            <input type="radio" name="answer" id="opt3" class="answer">
+            <label for="opt3" id="option3">Archimedes</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="opt4" class="answer">
+            <label for="opt4" id="option4">Eukleides</label>
+          </li>
+
+        </ul> 
+    </div>
+    <button class="showScore" >Next</button>
+
+    <div id="totalScore"></div>
+
+    <div style="display: none;" class="end_home">
+      <button onclick="location.href = quiz_section.html" >
+        Home
+      </button>
+    </div>
+        
+    <!-- <a href="maths_2.html" ><input type="submit" class="connect-button" value="Next" style="float: right;"></a> -->
+    </p>
+    </div>
+
+    <script>
+      if(localStorage.getItem("count_timer")){
+  var count_timer = localStorage.getItem("count_timer");
+} else {
+  var count_timer = 600*.5;
+}
+var minutes = parseInt(count_timer/60);
+var seconds = parseInt(count_timer%60);
+function countDownTimer(){
+  if(seconds < 10){
+      seconds= "0"+ seconds ;
+  }
+  
+  document.getElementById("countdown").innerHTML = "Time Left : "+minutes+" : "+seconds;
+  if(count_timer <= 0){
+       localStorage.clear("count_timer");
+       countdown.innerHTML = "Time Up!!";
+  } else {
+      count_timer = count_timer -1 ;
+      minutes = parseInt(count_timer/60);
+      seconds = parseInt(count_timer%60);
+      localStorage.setItem("count_timer",count_timer);
+      setTimeout("countDownTimer()",1000);
+  }
+  if(count_timer<10)
+  { var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'blink.css';
+    document.head.appendChild(link); 
+    countdown.style.color = "red";     
+  }
+}
+setTimeout("countDownTimer()",1000);
+
+const quizlist = [
+    {
+        question: "Who is the father of Mathematics ?",
+        opt1: "Srinivasa Iyengar Ramanujan",
+        opt2: "C V Raman",
+        opt3: "Archmedes",
+        opt4: "Eukleides",
+        ans:  "opt3"
+    },
+    {
+        question : "Solve   x^2 - 2x + 1 = 0 ",
+        opt1: "x = 2 , x = 3",
+        opt2: "x = -1 , x = 1",
+        opt3: "x = 1",
+        opt4: "x = 0",
+        ans:  "opt3"
+    },
+    {
+        question : " what type of roots does the polynomial  x^2 + x + 1 have",
+        opt1: "Real roots",
+        opt2: "one is real and one is imaginary",
+        opt3: "imaginary roots with no value for real part",
+        opt4: "complex roots",
+        ans:  "opt4"
+
+    },
+    {
+        question : "How many real roots does the polynomial   x^4  +  8*x^3  +  21*x^2  +  22*x  + 8",
+        opt1: "4",
+        opt2: "3",
+        opt3: "2",
+        opt4: "0",
+        ans:  "opt1"
+
+    },
+    {
+        question : "Who introduced the topic Polynomials",
+        opt1: "Rene Descards",
+        opt2: "Ussain Bolt",
+        opt3: "Euclid",
+        opt4: "None Of the above",
+        ans:  "opt1"
+
+    }
+];
+
+
+
+const question = document.querySelector(`.question`);
+const opt1 = document.querySelector("#option1");
+const opt2 = document.querySelector("#option2");
+const opt3 = document.querySelector("#option3");
+const opt4 = document.querySelector("#option4");
+
+const next = document.querySelector(".showScore");
+
+var answers = document.querySelectorAll(".answer");
+
+var total_score = document.querySelector("#totalScore");
+
+let count = 0;
+let score = 0;
+let review = "Review : ";
+
+const loadQuestion = () => {
+  
+
+    const q = quizlist[count];
+
+    review += q.question;
+    review += '\n';
+    review += q.opt1;
+    review += "\n";
+    review += q.opt2;
+    review += "\n";
+    review += q.opt3;
+    review += "\n";
+    review += q.opt4;
+    review += "\n ans : \n";
+    review += q.ans;
+
+    //console.log(q);
+
+    question.innerText = q.question;
+    opt1.innerText = q.opt1;
+    opt2.innerText = q.opt2;
+    opt3.innerText = q.opt3;
+    opt4.innerText = q.opt4;
+
+    
+
+    
+    
+    
+
+
+
+}
+
+
+
+
+
+
+const getCheckAnswer = () =>{
+    let answer;
+    //console.log(answers);
+    //console.log("hello");
+
+    Array.from(answers).forEach((curAns) => {
+        //console.log(curAns.id);
+        if(curAns.checked){
+            //console.log(curAns.id);
+            answer = curAns.id;
+            curAns.checked = false;
+        }
+    });
+    
+    return answer;
+
+};
+
+
+next.addEventListener('click' , () => {
+    var checkedAnswer = getCheckAnswer();
+    //console.log(checkedAnswer);
+
+    if(checkedAnswer===quizlist[count].ans){
+        score++;
+    }
+    else{
+        score = score - 0.25; 
+    }
+    count++;
+    if(count<quizlist.length){
+        loadQuestion();
+    }
+    else{
+        total_score.innerHTML = `
+        <h3>Your Score is : ${score}/${quizlist.length}</h3>
+        <h3> \n Review : ${review}</h3>
+        <button type="button" style="float:right; height: 30px; font-size: medium;" onclick="location.href = 'quiz_section.html';">Submit</button>
+        `;
+        total_score.classList.remove('end_home');
+        //document.getElementsByClassName("end_home").style.display = 'block';
+        //location.href = "end_page.html";
+    }
+});
+    </script>
+    
+    <!-- <script src="script.js"></script>
+    <script src="question_handling.js"></script> -->
+  </body>
+</html>T
